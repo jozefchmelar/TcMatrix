@@ -1,0 +1,1519 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Matrix
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Matrix
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PlcDocu.TcMatrix.Matrix">
+  
+  
+  <h1 id="PlcDocu_TcMatrix_Matrix" data-uid="PlcDocu.TcMatrix.Matrix" class="text-break">Class Matrix
+  </h1>
+  <div class="markdown level0 summary"><p>This abstract FB is the basis for all other matrix FBs. It represents a 2D array of LREAL elements.
+It provides dozens of methods and properties useful for manipulating itself, calculating values, and comparing to other matricies.
+Critically, this base class does not actually contain any mechanism for storing the values of the matrix (that is the responsibility of the specific inheriting sub-class).
+<remarks><p>
+<div class="NOTE"><h5>info</h5><p>
+	Because Matrix is an abstract FB it cannot be assigned (:=) directly. 
+	Instead, each Matrix is always passed in and out of a function AS REFERENCE.
+ 	This also allows interactions with inhereted sub-classes of Matrix more easily.	
+</p></div>
+</remarks>	
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Matrix</span></div>
+      <div class="level2"><a class="xref" href="PlcDocu.TcMatrix.DynamicMatrix.html">DynamicMatrix</a></div>
+      <div class="level2"><a class="xref" href="PlcDocu.TcMatrix.MatrixAccessor.html">MatrixAccessor</a></div>
+      <div class="level2"><a class="xref" href="PlcDocu.TcMatrix.StaticMatrix.html">StaticMatrix</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="PlcDocu.TcMatrix.html">PlcDocu.TcMatrix</a></h6>
+  <h6><strong>Assembly</strong>: TcMatrixConnector.dll</h6>
+  <h5 id="PlcDocu_TcMatrix_Matrix_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Matrix</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Average.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Average%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L541">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Average_" data-uid="PlcDocu.TcMatrix.Matrix.Average*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Average" data-uid="PlcDocu.TcMatrix.Matrix.Average">Average</h4>
+  <div class="markdown level1 summary"><p>Returns the average value of all elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic Average { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type LREAL; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerLReal</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Cols.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Cols%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L557">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Cols_" data-uid="PlcDocu.TcMatrix.Matrix.Cols*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Cols" data-uid="PlcDocu.TcMatrix.Matrix.Cols">Cols</h4>
+  <div class="markdown level1 summary"><p>Returns the number of columns in the matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic Cols { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type UINT; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerUInt</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_IsEmpty.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.IsEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L573">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_IsEmpty_" data-uid="PlcDocu.TcMatrix.Matrix.IsEmpty*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_IsEmpty" data-uid="PlcDocu.TcMatrix.Matrix.IsEmpty">IsEmpty</h4>
+  <div class="markdown level1 summary"><p>Returns true if the matrix does not have any addresible elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic IsEmpty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type Bool; Twin type: <see cref="!:Bool"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_IsSquare.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.IsSquare%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L589">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_IsSquare_" data-uid="PlcDocu.TcMatrix.Matrix.IsSquare*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_IsSquare" data-uid="PlcDocu.TcMatrix.Matrix.IsSquare">IsSquare</h4>
+  <div class="markdown level1 summary"><p>Returns true if this matrix is not empty, and the number of columns is equal to the number of rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic IsSquare { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type BOOL; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerBool</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_IsVector.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.IsVector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L605">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_IsVector_" data-uid="PlcDocu.TcMatrix.Matrix.IsVector*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_IsVector" data-uid="PlcDocu.TcMatrix.Matrix.IsVector">IsVector</h4>
+  <div class="markdown level1 summary"><p>Returns true if this matrix is not empty, and at least one dimension has a size of 1 (row vector or column vector).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic IsVector { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type BOOL; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerBool</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Length.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L621">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Length_" data-uid="PlcDocu.TcMatrix.Matrix.Length*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Length" data-uid="PlcDocu.TcMatrix.Matrix.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Total number of elements in this matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type UINT; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerUInt</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_MaxVal.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.MaxVal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L637">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_MaxVal_" data-uid="PlcDocu.TcMatrix.Matrix.MaxVal*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_MaxVal" data-uid="PlcDocu.TcMatrix.Matrix.MaxVal">MaxVal</h4>
+  <div class="markdown level1 summary"><p>Returns the maximum value from all elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic MaxVal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type LREAL; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerLReal</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_MinVal.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.MinVal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L653">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_MinVal_" data-uid="PlcDocu.TcMatrix.Matrix.MinVal*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_MinVal" data-uid="PlcDocu.TcMatrix.Matrix.MinVal">MinVal</h4>
+  <div class="markdown level1 summary"><p>Returns the minimum value from all elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic MinVal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type LREAL; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerLReal</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Rows.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Rows%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L669">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Rows_" data-uid="PlcDocu.TcMatrix.Matrix.Rows*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Rows" data-uid="PlcDocu.TcMatrix.Matrix.Rows">Rows</h4>
+  <div class="markdown level1 summary"><p>Total number of rows in this matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic Rows { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type UINT; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerUInt</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Sum.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Sum%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L685">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Sum_" data-uid="PlcDocu.TcMatrix.Matrix.Sum*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Sum" data-uid="PlcDocu.TcMatrix.Matrix.Sum">Sum</h4>
+  <div class="markdown level1 summary"><p>Returns the sum of all elements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic Sum { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type LREAL; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerLReal</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Clear.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L31">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Clear_" data-uid="PlcDocu.TcMatrix.Matrix.Clear*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Clear" data-uid="PlcDocu.TcMatrix.Matrix.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Resets the value of every element in this matrix to zero
+Sets the value of every element to 0.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_CopyFrom_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.CopyFrom(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L54">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_CopyFrom_" data-uid="PlcDocu.TcMatrix.Matrix.CopyFrom*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_CopyFrom_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.CopyFrom(System.Object)">CopyFrom(Object)</h4>
+  <div class="markdown level1 summary"><p>Copy the value from each element in the source matrix to each corresponding element in this matrix
+Prerequisites:</p>
+<ul>
+<li>This matrix is the same size as the source matrix</li>
+<li>Neither matrix is empty</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic CopyFrom(dynamic M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>Source of the copy operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Returns true if the prerequisites were met and the data was copied, false otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_ElementDifference_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.ElementDifference(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L78">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_ElementDifference_" data-uid="PlcDocu.TcMatrix.Matrix.ElementDifference*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_ElementDifference_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.ElementDifference(System.Object)">ElementDifference(Object)</h4>
+  <div class="markdown level1 summary"><p>For each element in this matrix, calculate a new value by Subtracting the value of the corresponding element of the supplied matrix from the value in this matrix
+THIS := THIS - M
+:Prerequisites:</p>
+<ul>
+<li>This matrix is the same size as the supplied matrix</li>
+<li>Neither matrix is empty</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic ElementDifference(dynamic M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>The subtrahend in the subtraction</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the operation completes successfully, false if the prerequisites are not met</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_ElementProduct_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.ElementProduct(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L102">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_ElementProduct_" data-uid="PlcDocu.TcMatrix.Matrix.ElementProduct*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_ElementProduct_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.ElementProduct(System.Object)">ElementProduct(Object)</h4>
+  <div class="markdown level1 summary"><p>For each element in this matrix, calculate a new value by Multiplying the value of the corresponding element of the supplied matrix with the value in this matrix
+THIS := THIS .* M
+:Prerequisites:</p>
+<ul>
+<li>This matrix is the same size as the supplied matrix</li>
+<li>Neither matrix is empty</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic ElementProduct(dynamic M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>the supplied matrix to be multiplied element-by-element to this matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the operation completes successfully, false if the prerequisites are not met</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_ElementSum_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.ElementSum(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L126">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_ElementSum_" data-uid="PlcDocu.TcMatrix.Matrix.ElementSum*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_ElementSum_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.ElementSum(System.Object)">ElementSum(Object)</h4>
+  <div class="markdown level1 summary"><p>For each element in this matrix, calculate a new value by Adding the value of the corresponding element of the supplied matrix with the value in this matrix
+THIS := THIS + M
+Prerequisites:</p>
+<ul>
+<li>This matrix is the same size as the supplied matrix</li>
+<li>Neither matrix is empty</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic ElementSum(dynamic M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>The supplied matrix to be added to this matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the operation completes successfully, false if the prerequisites are not met</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_FillFrom_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.FillFrom(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L145">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_FillFrom_" data-uid="PlcDocu.TcMatrix.Matrix.FillFrom*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_FillFrom_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.FillFrom(System.Object)">FillFrom(Object)</h4>
+  <div class="markdown level1 summary"><p>For every element that exist in both this matrix and the source matrix, copy the value from the source matrix into this matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public void FillFrom(dynamic M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>source matrix for element copy operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_FillTrapezoidal_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.FillTrapezoidal(System.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L176">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_FillTrapezoidal_" data-uid="PlcDocu.TcMatrix.Matrix.FillTrapezoidal*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_FillTrapezoidal_System_Object_System_Object_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.FillTrapezoidal(System.Object,System.Object,System.Object)">FillTrapezoidal(Object, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Fills all elements of this matrix based on which of three zones it is located into when considered as a trapezoidal matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public void FillTrapezoidal(dynamic Diagonal, dynamic UpperRight, dynamic LowerLeft)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Diagonal</span></td>
+        <td><p>Every element on the main diagonal of the matrix is set to this value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">UpperRight</span></td>
+        <td><p>Every element above or to the right of the main diagonal is set to this value</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">LowerLeft</span></td>
+        <td><p>Every element below or to the left of the main diagonal is set to this value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_GetI_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.GetI(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L204">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_GetI_" data-uid="PlcDocu.TcMatrix.Matrix.GetI*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_GetI_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.GetI(System.Object)">GetI(Object)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the element in this matrix at the supplied location as if the elements were stored in a 1D row-major array
+Prerequisites:</p>
+<ul>
+<li>I &lt; Rows*Cols</li>
+<li>Matrix is not empty
+<remarks></remarks></li>
+</ul>
+<div class="NOTE"><h5>note</h5><p>
+	If the supplied index is out of bounds the value 0 is returned and a warning is generated in the Error List
+</p></div>
+
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic GetI(dynamic I)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">I</span></td>
+        <td><p>The index of the element which should have its value returned</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The value of the element at the specified index, or 0 if an invalid index is supplied</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_GetRC_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.GetRC(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L242">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_GetRC_" data-uid="PlcDocu.TcMatrix.Matrix.GetRC*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_GetRC_System_Object_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.GetRC(System.Object,System.Object)">GetRC(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Returns the value of the element of this matrix at the specified row and column.
+Prerequisites:</p>
+<ul>
+<li>Row &lt; Rows</li>
+<li>Col &lt; Cols</li>
+<li>Matrix is not empty
+<remarks></remarks></li>
+</ul>
+<div class="IMPORTANT"><h5>important</h5><p>
+	If the supplied or or column is out of bounds then a warning message is generated in the Error List and the value 0 is returned
+</p></div>
+<div class="IMPORTANT"><h5>important</h5><p>
+	The value of the element at the specified row and column, or 0 if an invalid index is supplied
+</p></div>
+
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic GetRC(dynamic Row, dynamic Col)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Row</span></td>
+        <td><p>The row of the element to fetch</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Col</span></td>
+        <td><p>The column of the element to fetch</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Returns the value of the element at the specified (0-indexed) position within the matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_GetSize_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.GetSize(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L273">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_GetSize_" data-uid="PlcDocu.TcMatrix.Matrix.GetSize*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_GetSize_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.GetSize(System.Object)">GetSize(Object)</h4>
+  <div class="markdown level1 summary"><p>Returns the length of the matrix in the specified dimension
+<example>
+GetSize(0) is equivalent to Rows	
+GetSize(1) is equivalent to Cols
+</example>
+<remarks><p>
+<div class="IMPORTANT"><h5>important</h5><p>
+	If an invalid dimension is supplied then a warning is generated in the Error List and the value 0 is returned 
+</p></div>
+<div class="IMPORTANT"><h5>important</h5><p>
+	The length of the matrix in the specified dimension, or 0 if the dimension specified is invalid
+</p></div>
+</remarks>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic GetSize(dynamic Dim)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Dim</span></td>
+        <td><p>The dimension of the matrix for which the size should be returned. 0=Rows, 1=Cols</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Plc type UINT; Twin type: <span class="xref">Vortex.Connector.ValueTypes.OnlinerUInt</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_GetVectorMagnitude.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.GetVectorMagnitude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L294">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_GetVectorMagnitude_" data-uid="PlcDocu.TcMatrix.Matrix.GetVectorMagnitude*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_GetVectorMagnitude" data-uid="PlcDocu.TcMatrix.Matrix.GetVectorMagnitude">GetVectorMagnitude()</h4>
+  <div class="markdown level1 summary"><p>Calcualtes the vector magnitude of this matrix (square root of the sum of the squares), assuming it is a vector.
+:Prerequisites:</p>
+<ul>
+<li>This matrix is not empty and is a vector
+<remarks></remarks></li>
+</ul>
+<div class="IMPORTANT"><h5>important</h5><p>
+	 If this matrix is empty or is not a vector, 0 is returned
+</p></div>
+
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic GetVectorMagnitude()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The vector magnitude of this matrix if it is a vector, otherwise 0</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_InvertSquare_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.InvertSquare(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L317">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_InvertSquare_" data-uid="PlcDocu.TcMatrix.Matrix.InvertSquare*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_InvertSquare_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.InvertSquare(System.Object)">InvertSquare(Object)</h4>
+  <div class="markdown level1 summary"><p>Inverts the matrix. May fail if the matrix is too close to being singular. Use the tolerance input to specify how close to go (1E-6 to 1E-9 is porbably good).
+:Prerequisites:</p>
+<ul>
+<li>This matrix is square</li>
+<li>This matrix is not empty</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic InvertSquare(dynamic Tolerance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Tolerance</span></td>
+        <td><p>The smallest magnitude of number that is allowed to be used as a denominator in the calculation of the inverse</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>True if the inverse has been calculated. False if a precondition was not met, or a near-singularity was detected (data may be malformed).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_IsEqualSize_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.IsEqualSize(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L343">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_IsEqualSize_" data-uid="PlcDocu.TcMatrix.Matrix.IsEqualSize*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_IsEqualSize_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.IsEqualSize(System.Object)">IsEqualSize(Object)</h4>
+  <div class="markdown level1 summary"><p>Returns TRUE if IsEqualSize is true AND every element in this matrix is equal to its corresponding element in the supplied matrix
+Checks if this matrix is the same size (number of rows and number of columns match) as the supplied matrix.
+<remarks><p>
+<div class="NOTE"><h5>note</h5><p>
+	two empty matricies are considered the same size.
+</p></div>
+</remarks>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic IsEqualSize(dynamic M)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>The matrix which should have its size compared to the size of this matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>True if this matrix is the same size as the supplied matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_IsNearlyEqual_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.IsNearlyEqual(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L375">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_IsNearlyEqual_" data-uid="PlcDocu.TcMatrix.Matrix.IsNearlyEqual*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_IsNearlyEqual_System_Object_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.IsNearlyEqual(System.Object,System.Object)">IsNearlyEqual(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Determines if this matrix is <em>nearly</em> equal to a supplied matrix, based on a supplied precision.
+Two matricies are considered nearly equal if they are the same size and every set of corresponding elements are equal to within the supplied precision.
+<remarks><p>
+<div class="NOTE"><h5>note</h5><p>
+	Note that two empty matricies are considered equal
+</p></div>
+</remarks>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic IsNearlyEqual(dynamic M, dynamic Precision)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">M</span></td>
+        <td><p>The other matrix to compare to this one</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Precision</span></td>
+        <td><p>Deviation between two elements larger than this value makes them unequal</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the two matricies are nearly equal, FALSE if they are not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Power_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Power(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L399">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Power_" data-uid="PlcDocu.TcMatrix.Matrix.Power*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Power_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.Power(System.Object)">Power(Object)</h4>
+  <div class="markdown level1 summary"><p>Raises every element of the matrix to the supplied power
+<remarks><p>
+<div class="IMPORTANT"><h5>important</h5><p>
+	Many values of exponent could easily cause all of the elements to turn into NaN!
+</p></div>
+</remarks>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public void Power(dynamic Exponent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Exponent</span></td>
+        <td><p>Power with which to raise every element of the matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_Scale_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.Scale(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L418">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_Scale_" data-uid="PlcDocu.TcMatrix.Matrix.Scale*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_Scale_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.Scale(System.Object)">Scale(Object)</h4>
+  <div class="markdown level1 summary"><p>Scales every element of this matrix by the supplied value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public void Scale(dynamic Scalar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Scalar</span></td>
+        <td><p>Value with which to scale every element of this matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_SetI_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.SetI(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L445">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_SetI_" data-uid="PlcDocu.TcMatrix.Matrix.SetI*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_SetI_System_Object_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.SetI(System.Object,System.Object)">SetI(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Sets the element specified BY the supplied index TO the suppleid value, assuming the data OF the matrix is stored in a 1D row-major ARRAY
+Prerequisites: - I &lt; Rows*Cols</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic SetI(dynamic I, dynamic Val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">I</span></td>
+        <td><p>The index specifying which element should be modified</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Val</span></td>
+        <td><p>The value copied to the corresponding element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the specified index is valid and the data is copied. FLASE otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_SetRC_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.SetRC(System.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L487">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_SetRC_" data-uid="PlcDocu.TcMatrix.Matrix.SetRC*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_SetRC_System_Object_System_Object_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.SetRC(System.Object,System.Object,System.Object)">SetRC(Object, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Sets the element specified by the supplied row and column to the suppleid value
+Prerequisites:</p>
+<ul>
+<li>Row &lt; Rows</li>
+<li>Col &lt; Cols</li>
+<li>Matrix is not empty
+<remarks></remarks></li>
+</ul>
+<div class="IMPORTANT"><h5>important</h5><p>
+	If the supplied or or column is out of bounds then a warning message is generated in the Error List and the value 0 is returned
+	The value of the element at the specified row and column, or 0 if an invalid index is supplied
+</p></div>
+
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic SetRC(dynamic Row, dynamic Col, dynamic Val)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Row</span></td>
+        <td><p>The row of the element to set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Col</span></td>
+        <td><p>The column of the element to set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">Val</span></td>
+        <td><p>The value to copy into the specified element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the specified row and column are valid and the data is copied. FALSE otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_SortByColAsc_System_Object_.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.SortByColAsc(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L511">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_SortByColAsc_" data-uid="PlcDocu.TcMatrix.Matrix.SortByColAsc*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_SortByColAsc_System_Object_" data-uid="PlcDocu.TcMatrix.Matrix.SortByColAsc(System.Object)">SortByColAsc(Object)</h4>
+  <div class="markdown level1 summary"><p>Sorts the matrix by swapping entire rows around until the specified column is in ascending order. The relative position of equal rows will remain unchanged so as to allow tiered sorting.
+In-place bubble sort of rows by the specified col, into ascending order
+algorithm is 'stable', meaning that two equivalent rows will maintain their relative position after
+This is nice because it lets you sort by secondary/tertiary/etc columns (if you do them in reverse)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic SortByColAsc(dynamic SortCol)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">SortCol</span></td>
+        <td><p>Plc type : UINT [VAR_INPUT]; Twin type : <span class="xref">Vortex.Connector.ValueTypes.OnlinerUInt</span></p>
+<p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Returns the value of the element at the specified (0-indexed) position within the matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix_TransposeSquare.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix.TransposeSquare%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L528">View Source</a>
+  </span>
+  <a id="PlcDocu_TcMatrix_Matrix_TransposeSquare_" data-uid="PlcDocu.TcMatrix.Matrix.TransposeSquare*"></a>
+  <h4 id="PlcDocu_TcMatrix_Matrix_TransposeSquare" data-uid="PlcDocu.TcMatrix.Matrix.TransposeSquare">TransposeSquare()</h4>
+  <div class="markdown level1 summary"><p>Transposes the matrix.<br>
+:Prerequisites:</p>
+<ul>
+<li>This matrix is square</li>
+<li>This matrix is not empty</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[IgnoreReflection]
+public dynamic TransposeSquare()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>TRUE if the operation completes successfully, false if the prerequisites are not met</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jozefchmelar/TcMatrix/new/main/apiSpec/new?filename=PlcDocu_TcMatrix_Matrix.md&amp;value=---%0Auid%3A%20PlcDocu.TcMatrix.Matrix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jozefchmelar/TcMatrix/blob/main/TcMatrixConnector/_generated/PlcDocumentation/PlcDocuMatrix.g.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

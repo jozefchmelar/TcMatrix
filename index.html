@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TcMatrix </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="TcMatrix ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tcmatrix">TcMatrix</h1>
+
+<h2 id="description">Description</h2>
+<p>A TwinCAT 3 library for manipulating 2D data sets of LREAL.</p>
+<p>Features include:</p>
+<ul>
+<li>Element-wise setting, getting, summing, scaling, and power functions</li>
+<li>Initialization as copies, zeros, trapezoidal, and other pre-defined matrix types</li>
+<li>Matrix operations like multiplication, transposition, and inversion</li>
+<li>Vector operations for 1D matricies like dot/cross product and normalization</li>
+<li>Complex access operations similar to <a href="https://en.wikipedia.org/wiki/Array_slicing">'slicing'</a></li>
+<li>Options to use static or dynamically allocated memory</li>
+<li>Reading/Writing with CSV files, output to the ADS message logger</li>
+</ul>
+<p>Compare to:</p>
+<ul>
+<li><a href="https://us.store.codesys.com/matrix-library.html">CODESYS Matrix Library</a> (<a href="https://store.codesys.com/media/n98_media_assets/files/2111000003-D/4/Matrix%20Bibliothek_en.pdf">docs</a>)</li>
+<li><a href="https://support.industry.siemens.com/cs/document/109479728/library-of-general-functions-(lgf)-for-simatic-step-7-(tia-portal)-and-simatic-s7-1200-s7-1500">Siemens Library of General Functions</a> (<a href="https://cache.industry.siemens.com/dl/files/728/109479728/att_1019474/v3/109479728_LGF_TIAV16_DOC_V5_0_0_en.pdf">docs</a>)</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#twincat-3-installation">Installation</a></li>
+<li><a href="/api/PlcDocu.TcMatrix.Matrix.html">Full API reference</a></li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#projects-with-implementations">Projects</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="twincat-3-installation">TwinCAT 3 Installation</h2>
+<h3 id="from-binary">From Binary</h3>
+<ol>
+<li>Go to the <a href="https://github.com/BurksEngineering/TcMatrix/releases">releases page</a> and download the *.library file from the latest release, saving it to a temporary directory somewhere on the computer running TwinCAT.</li>
+<li>Follow the <a href="https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_plc_intro/4189333259.html">library installation instructions</a> from Beckhoff, using the 'Install' option and browsing for the local copy you had just downloaded.</li>
+<li>After installtion, you may delete the local copy of the library that you had downloaded. Beckhoff has likely copied it to a version-specific folder in <code>C:\TwinCAT\3.1\Components\Plc\Managed Libraries\Burks Engineering\TcMatrix\</code></li>
+</ol>
+<h3 id="from-source">From Source</h3>
+<p>Preconditions:</p>
+<ul>
+<li>TwinCAT 3.1.4024 XAE</li>
+<li>TwinCAT 3.1.4024 XAR, ideally configured with an isolated core</li>
+<li>Visual Studio Community or Shell, 2019 or higher</li>
+<li><a href="https://github.com/tcunit/TcUnit">TcUnit</a> v1.2 or higher</li>
+</ul>
+<p>Compilation:</p>
+<ol>
+<li>Clone the repository to a computer running TwinCAT 3</li>
+<li>Open the <a href="TcMatrix.sln">main solution file</a> in Visual Studio</li>
+<li>Within the Visual Studio <em>TcMatrix</em> project, right click on the <em>TcMatrix/TcMatrix Project</em> item and select <em>Rebuild</em>
+<ol>
+<li>There should be no compile errors, although there may be warnings</li>
+</ol>
+</li>
+<li>Right click on the <em>TcMatrix/TcMatrix Project</em> item again and select <em>Save as library and install</em>
+<ol>
+<li>The file can be saved anywhere, but a local <em>Builds</em> folder is always a good choice</li>
+</ol>
+</li>
+</ol>
+<p>Test:</p>
+<ol>
+<li>Within the Visual Studio <em>TcMatrixTest</em> project, right click on the <em>PLC/TcMatrixTest/TcMatrixTest Project</em> item and select <em>Rebuild</em>
+<ol>
+<li>There should be no compile errors, although there may be warnings</li>
+</ol>
+</li>
+<li>Open the <em>SYSTEM/Real-Time</em> item and click <em>Read From Target</em>, then assign all tasks to an isolated core from your system</li>
+<li>In the Visual Studio toolbar (or TwinCAT file menu) click <em>Activate Configuration</em></li>
+<li>When prompted, agree to start the project in run mode and auto-start the boot project</li>
+<li>After a few seconds the TcUnit results should be visible in the Error List window. Verify that all tests have passed.</li>
+</ol>
+<h2 id="examples">Examples</h2>
+<h3 id="projects-with-implementations">Projects With Implementations</h3>
+<ul>
+<li><a href="https://github.com/BurksEngineering/TcTransform">TcTransform</a>:  Static memory 3x1, 3x3, and 4x4 matricies for common 3D coordinate system transformations</li>
+<li>The unit tests within this project provide a large number of simple examples and usages</li>
+<li>The ExternalStaticMatrix is one example of how to implement the StaticMatrix base class</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jozefchmelar/TcMatrix/blob/7cfbc1ea8b67e57234ac22a16d1cec7a48a72ba2/docu/TcMatrixDocu/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

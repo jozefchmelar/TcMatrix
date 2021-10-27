@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace PlcDocu.TcMatrix
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace PlcDocu.TcMatrix
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PlcDocu.TcMatrix">
+  
+  <h1 id="PlcDocu_TcMatrix" data-uid="PlcDocu.TcMatrix" class="text-break">Namespace PlcDocu.TcMatrix
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.DynamicMatrix.html">DynamicMatrix</a></h4>
+      <section><p>The DynamicMatrix class uses the FB_DynMem_Manager2 to dynamically allocate as much memory as required for the given operation.
+This amazing flexibility comes at the cost of some restrictions on use in order to avoid memory leaks.
+<remarks><p>
+<div class="WARNING"><h5>warning</h5><p>
+	Using the assignment operator (:=) to copy a DynamicMatrix will result in the new matrix retaining a pointer to the data of the old matrix! For this reason, the pragma {attribute &apos;no_assign&apos;} is used to block assignment at compile-time, but inheriting sub-classes will need to include this pragma themselves.
+	Note that using DynamicMatrix as the return value of a function is essentially an assignment operation and will also not work. Therefore, it is recommended to always pass DynamicMatrix objects in and out of functions using the REFERENCE TO keyword. To alleviate the pain of these assignment rules there are a ton of &apos;Resultant&apos; helper functions available to use which initialize a new DynamicMatrix as the result of some operation on other matrix objects.	
+</p></div>
+</remarks>	
+The DynamicMatrix FB will automatically free its memory when an instance of the class is created, or goes out of scope.
+This prevents memory leaks and page faults, but it also prevents you from instantiating a DynamicMatrix inside of a function and then passing a REFERENCE TO it back up the call chain.
+Another consequnce is that a DynamicMatrix cannot be retained after power-loss. 
+A DynamicMatrix within a GVL will free its memory when the program terminates.							
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.ExternalStaticMatrix.html">ExternalStaticMatrix</a></h4>
+      <section><p>This simple concrete derivative of the StaticMatrix class uses an external ARRAY OF LREAL as the memory source for the matrix data.
+It is accessed in row-major order based on the logic in the GetI and SetI functions.
+It is most useful when someone doesn't trust dynamically allocated memory, but also doesn't want to make multiple size-specific custom derived FBs just to set up a single complex matrix operation.</p>
+<pre><code>Init(R,C,pD)</code></pre> : Must be called in order to setup the matrix (it will be empty until this method is called).
+<remarks>			
+<div class="WARNING"><h5>warning</h5><p>
+It is the callers responsibility to ensure that the pointer provided to the initializer is valid:
+ 	- The length of the data structure pointed to (probably an array of LREAL) is at least as long as Rows x Cols
+	- The scope of the data structure pointed to is the same as the scope of the corresponding ExternalStaticMatrix (probably declared adjacent to eachother as a VAR or GVL)
+Additionally, direct assignment (:=) should not be used with this type of matrix because a second copy of the Matrix, but with a pointer to the original&apos;s data source, would be created. For this reason, the pragma {attribute &apos;no_assign&apos;} is used to block assignment at compile-time. Keep in mind that returning a value from a function is also a form of assignment and is not allowed.	
+</p></div>
+</remarks>
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.Matrix.html">Matrix</a></h4>
+      <section><p>This abstract FB is the basis for all other matrix FBs. It represents a 2D array of LREAL elements.
+It provides dozens of methods and properties useful for manipulating itself, calculating values, and comparing to other matricies.
+Critically, this base class does not actually contain any mechanism for storing the values of the matrix (that is the responsibility of the specific inheriting sub-class).
+<remarks><p>
+<div class="NOTE"><h5>info</h5><p>
+	Because Matrix is an abstract FB it cannot be assigned (:=) directly. 
+	Instead, each Matrix is always passed in and out of a function AS REFERENCE.
+ 	This also allows interactions with inhereted sub-classes of Matrix more easily.	
+</p></div>
+</remarks>	
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.MatrixAccessor.html">MatrixAccessor</a></h4>
+      <section><p>Matrix accessors are a way of interacting with the data of a parent Matrix through a special lens, without copying the data into a new Matrix and then back again.
+This type of Matrix works by creating a function that converts the I-based indexing of the accessor matrix into the I-based indexing of the parent matrix, then using it to intercept calls to GetI and SetI.
+Concrete Matrix Accessor Classes can be easily created from the parent MatrixAccessor abstract class by implementing the This2Parent method in order to define the index conversion.
+<remarks><p>
+<div class="NOTE"><h5>note</h5><p>
+	Note that matrix accessor allow both read and write access to the parent matrix!	
+</p></div>
+<div class="WARNING"><h5>warning</h5><p>
+	Matrix Accessors inherently store a pointer (BY REFERENCE) to their parent matrix. If the parent matrix goes out of scope (through function return) or is moved (through an online change) then the Matrix Accessor will no longer work. Therefore, they are best used quickly then destroyed, all within the scope of a single F or FB.
+</p></div>
+</remarks>
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.MatrixCsvReader.html">MatrixCsvReader</a></h4>
+      <section></section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.ShrunkMatrixAccessor.html">ShrunkMatrixAccessor</a></h4>
+      <section><p><a class="xref" href="PlcDocu.TcMatrix.MatrixAccessor.html">MatrixAccessor</a>
+Allows access to the parent matrix as if the <a class="xref" href="PlcDocu.TcMatrix.DynamicMatrix.html#PlcDocu_TcMatrix_DynamicMatrix_Shrink_System_Object_System_Object_">Shrink(Object, Object)</a> function had been called</p>
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.StaticMatrix.html">StaticMatrix</a></h4>
+      <section><p>This type of matrix has the number of rows and columns set during initialization and then they cannot be changed.
+Derived class must:</p>
+<ul>
+<li>Declare a VAR array of LREAL named Data_</li>
+<li>Call Init_ in FB_init, pointing to the local arrays, with Rows and Cols such that Rows*Cols &lt;= Length(Data_)
+This simple abstract class sets the rules for all static memory matricies by creating a protected Init_(R,C) method that must be called to set the initial size of the matrix.
+It also implements the required Rows and Cols properties to return the values that were set during initialization.
+<remarks></remarks></li>
+</ul>
+<div class="WARNING"><h5>warning</h5><p>
+It is the callers responsibility to ensure that the pointer provided to the initializer is valid:
+ 	- The length of the data structure pointed to (probably an array of LREAL) is at least as long as Rows x Cols
+	- The scope of the data structure pointed to is the same as the scope of the corresponding ExternalStaticMatrix (probably declared adjacent to eachother as a VAR or GVL)
+Additionally, direct assignment (:=) should not be used with this type of matrix because a second copy of the Matrix, but with a pointer to the original&apos;s data source, would be created. For this reason, the pragma {attribute &apos;no_assign&apos;} is used to block assignment at compile-time. Keep in mind that returning a value from a function is also a form of assignment and is not allowed.	
+</p></div>
+
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.SubMatrixAccessor.html">SubMatrixAccessor</a></h4>
+      <section><p><a class="xref" href="PlcDocu.TcMatrix.MatrixAccessor.html">MatrixAccessor</a>
+Allows access to a rectangular subset of the parent matrix as if it were a standalone matrix</p>
+</section>
+      <h4><a class="xref" href="PlcDocu.TcMatrix.TransposeMatrixAccessor.html">TransposeMatrixAccessor</a></h4>
+      <section><p><a class="xref" href="PlcDocu.TcMatrix.MatrixAccessor.html">MatrixAccessor</a>
+Allows access to the elements of the parent matrix as if it were transposed</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
